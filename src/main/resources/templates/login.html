@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Motoverso</title>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/login.css}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link th:href="@{/css/heroic-features.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg   fixed-top"  style="background-color:#030806">
+  <div class="container">
+    <a class="navbar-brand " style="color:white" th:href="@{/home}">Motoverso</a>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="color:white" th:href="@{/login}">
+            <i class="bi bi-person-workspace" style="font-size:20px"></i>
+            Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Page Content -->
+<div class="container content-form " style="margin-top: 100px; width: 45rem">
+  <h2 style="text-align: center">
+    <i class="bi bi-person-workspace" style="text-align:center font-size:60px"></i>
+    Inicio de sesión</h2>
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-8">
+        <!-- Mostrar errores -->
+        <div th:if="${errorMessage}" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Error:</strong> <span th:text="${errorMessage}"></span>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form th:action="@{/login}" method="post">
+    <div class="form-group">
+      <label for="username"> Correo electrónico: </label>
+      <input type="email" class="form-control" id="username" name="username" placeholder="Ingrese su email" required autocomplete="off">
+    </div>
+
+    <div class="form-group">
+      <label for="password"> Contraseña:</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su contraseña" required>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-2">
+        <button type="submit" class="btn btn-outline-primary"> <span class="glyphicon glyphicon-ok"></span> Ingresar</button>
+      </div>
+    </div>
+  </form>
+  <p>Si no tienes cuenta <a th:href="@{/register}" class="card-link">registrate aquí</a></p>
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+
+
+<!-- Bootstrap core JavaScript -->
+<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+
+</body>
+
+
+</html>

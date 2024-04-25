@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Motoverso</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Bootstrap core CSS -->
+  <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/registro.css}" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link th:href="@{/css/heroic-features.css}" rel="stylesheet">
+
+</head>
+<style>
+  .error{
+    color:red;
+  }
+</style>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top" style="background-color:#030806">
+    <div class="container">
+      <a class="navbar-brand" th:href="@{/home}" style="color:white">Motoverso</a>
+
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/login}" style="color:white">
+              <i class="bi bi-person-workspace" style="font-size:20px"></i>
+              Login</a>
+          </li>
+        </ul>
+      </div>    
+    </div>
+  </nav>
+
+
+ <!-- Page Content  -->
+  <div class="container content-form card mb-5 mt-5" style="width: 45rem; padding: 2rem">
+    <i class="bi bi-person-workspace" style="text-align:center; font-size:60px" ></i>
+    <div></div>
+    <h2 style="text-align:center">
+      Registro</h2>
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <div class="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-success" role="alert" th:text="${success}" th:if="${success}"></div>
+
+	<form th:action="@{/register}" method="post" th:object="${userDto}">
+      <div class="form-group">
+        <label for="firstName">Nombre:</label> <input type="text"
+          class="form-control" id="firstName" name="firstName"
+          placeholder="Ingrese su nombre" autocomplete="off">
+        <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" th:errorclass="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Apellido:</label> <input type="text" class="form-control" id="lastName" name="lastName"
+                                                      placeholder="Ingrese su apellido" autocomplete="off">
+        <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" th:errorclass="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label> <input type="email"
+          class="form-control" id="email" name="email"
+          placeholder="Ingrese su email" autocomplete="off">
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:errorclass="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Dirección:</label> <input type="text"
+          class="form-control" id="address" name="address"
+          placeholder="Ingrese su dirección" autocomplete="off">
+        <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}" th:errorclass="error"></p>
+      </div>
+	   <div class="form-group">
+        <label for="cellphone">Teléfono:</label> <input type="text"
+          class="form-control" id="cellphone" name="cellphone"
+          placeholder="Ingrese su teléfono" autocomplete="off">
+         <p th:if="${#fields.hasErrors('cellphone')}" th:errors="*{cellphone}" th:errorclass="error" ></p>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña</label> <input type="password"
+          class="form-control" id="password" name="password" placeholder="Ingrese su contraseña" autocomplete="off">
+        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:errorclass="error"></p>
+      </div>
+      <div class="col-sm-2">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </form>
+
+  </div>
+
+  </div>
+
+  <!-- /.container -->
+
+  <!-- Footer -->
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+  <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+
+</html>

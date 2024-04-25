@@ -1,0 +1,151 @@
+<!-- Navigation -->
+<div th:fragment ="header">
+<nav class="navbar navbar-expand-lg navbar-dark  fixed-top" style="background-color:#030806">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/home}">Motoverso</a>
+
+        <form class="form-inline my-2 my-lg-0" method="post"
+              action="#">
+            <input class="form-control mr-sm-2" type="search"
+                   placeholder="Buscar" aria-label="Search" name="nombre"
+                   autocomplete="off">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"> <a class="nav-link" th:href="@{/user/cart/get-cart}">
+                    <i class="bi bi-cart3"></i>
+                    Carrito</a></li>
+                <li class="nav-item"> <a class="nav-link" th:href="@{/login}">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</div>
+
+<!-- Fragment user logged -->
+<div th:fragment ="userlogged">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#030806">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/home}">Motoverso</a>
+
+            <form class="form-inline my-2 my-lg-0" method="post"
+                  action="#">
+                <input class="form-control mr-sm-2" type="search"
+                       placeholder="Buscar" aria-label="Search" name="nombre"
+                       autocomplete="off">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="bi bi-person-circle text-white"></i>
+                            USER
+                        </a>
+
+                        <div class="dropdown-menu"
+                             aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item"  th:href="@{/user/cart/get-cart}">
+                                <i class="bi bi-cart-check"></i>
+                                Carrito</a>
+                            <a class="dropdown-item" th:href="@{/user/cart/shopping}">
+                                <i class="bi bi-clipboard-check"></i>
+                                Ordenes</a>
+                            <a class="dropdown-item" th:href="@{/logout}">
+                                <i class="bi bi-box-arrow-right"></i>
+                                Salir</a>
+                        </div></li>
+
+                    </li>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- Footer -->
+<footer th:fragment="footer" style="width: 100%; bottom: 0;">
+    <div class="py-5" style="background-color:#030806">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-white">Redes Sociales</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-white" href="#">
+                            <i class="bi bi-facebook"></i>
+                            Facebook</a></li>
+                        <li><a class="text-white" href="#">
+                            <i class="bi bi-meta"></i>
+                            Meta</a></li>
+                        <li><a class="text-white" href="#">
+                            <i class="bi bi-instagram"></i>
+                            Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-white">Dirección</h5>
+                    <p class="text-white">
+                        <i class="bi bi-geo-alt"></i>
+                        Calle 1 No 45- 98, Bogota, Colombia</p>
+                    <p class="text-white">
+                        <i class="bi bi-geo-alt"></i>
+                        Calle 4 , Medellin, Colombia</p>
+                    <p class="text-white">
+                        <i class="bi bi-geo-alt"></i>
+                        Calle Principal 123, Cali, Colombia</p>
+                    <p class="text-white">
+                        <i class="bi bi-geo-alt"></i>
+                        Calle Principal 123, Barranquilla, Colombia</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-white">Teléfonos</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-white" href="tel:+123456789">
+                            <i class="bi bi-whatsapp"></i>
+                            (+57) 312 567 8889</a></li>
+                        <li><a class="text-white" href="tel:+987654321">
+                            <i class="bi bi-whatsapp"></i>
+                            (+57) 300 654 3322</a></li>
+                        <li><a class="text-white" href="tel:+987654321">
+                            <i class="bi bi-whatsapp"></i>
+                            (+57) 314 654 5232</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-white">Medios de pago</h5>
+                    <ul class="list-unstyled text-small">
+                    <li><a class="text-white">
+                        <i class="bi bi-paypal"></i>
+                        Paypal</a></li>
+                    <li><a class="text-white">
+                        <i class="bi bi-credit-card-2-back"></i>
+                        Visa</a></li>
+                    <li><a class="text-white">
+                        <i class="bi bi-credit-card-2-back"></i>
+                        Master card</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="m-0 text-center text-white mt-4">
+                <i class="bi bi-shop"></i>
+                Motoverso 2024</p>
+        </div>
+    </div>
+</footer>
+
+

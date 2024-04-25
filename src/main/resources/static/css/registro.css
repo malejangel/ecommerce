@@ -1,0 +1,22 @@
+/*!
+ * Start Bootstrap - Heroic Features (https://startbootstrap.com/templates/heroic-features)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-heroic-features/blob/master/LICENSE)
+ */
+.content-form {
+
+
+	width: 600px;
+	background-color: aqua;
+	background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+body {
+
+			background: url(/img/registro.jpg)no-repeat;
+			background-size: cover;
+			/* Ajusta la imagen para cubrir todo el contenedor */
+			background-attachment: fixed;
+		}

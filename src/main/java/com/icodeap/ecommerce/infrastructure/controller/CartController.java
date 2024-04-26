@@ -51,7 +51,7 @@ public class CartController {
         return "redirect:/user/cart/get-cart";
     }
 
-    @GetMapping("/checkout/paypal")
+    /*@GetMapping("/checkout/paypal")
     public String checkoutWithPaypal() {
         return "redirect:https://www.paypal.com/checkout";
     }
@@ -62,6 +62,6 @@ public class CartController {
         // Lógica para manejar el éxito del pago en PayPal
         // Aquí puedes actualizar el estado del pedido en tu sistema y redirigir al usuario a una página de confirmación de compra
         return "redirect:/user/cart/get-cart";
-    }
+    }*/
 
 }
